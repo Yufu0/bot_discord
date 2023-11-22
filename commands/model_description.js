@@ -6,7 +6,6 @@ module.exports = {
         .setName('model_description')
         .setDescription('Return the description of the current model.'),
     execute(interaction) {
-
         fetch(url)
             .then(response => {
                 if (!response.ok) {
