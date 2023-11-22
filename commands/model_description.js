@@ -1,6 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-
-const url = 'http://127.0.0.1:8000/api/model/description';
+const url = process.env.BASE_URL + '/model/description';
 
 module.exports = {
     data: new SlashCommandBuilder()
