@@ -4,7 +4,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('ping')
         .setDescription('Test if the bot is working correctly.'),
-    async execute(interaction) {
-        await interaction.reply({ content: `Pong ! ${Math.abs(Date.now() - interaction.createdTimestamp)}ms`, ephemeral: true });
+    execute(interaction) {
+        interaction.reply({ content: `Pong ! ${Math.abs(Date.now() - interaction.createdTimestamp)}ms`, ephemeral: true });
     }
 };
