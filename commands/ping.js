@@ -5,6 +5,6 @@ module.exports = {
         .setName('ping')
         .setDescription('Test if the bot is working correctly.'),
     async execute(interaction) {
-        await interaction.reply({ content: `Pong !`, ephemeral: true });
+        await interaction.reply({ content: `Pong ! ${Math.abs(Date.now() - interaction.createdTimestamp)}ms`, ephemeral: true });
     }
 };

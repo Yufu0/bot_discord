@@ -1,4 +1,4 @@
-const { Client, Events, GatewayIntentBits, Collection} = require('discord.js');
+const { Client, GatewayIntentBits, Collection} = require('discord.js');
 const { REST } = require('@discordjs/rest');
 const { Routes} = require('discord-api-types/v9');
 const dotenv = require('dotenv');
@@ -6,7 +6,6 @@ const fs = require('fs');
 
 dotenv.config();
 
-// ----------------------------------- Load all commands -----------------------------------
 const commands = [];
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
