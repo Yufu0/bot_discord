@@ -1,7 +1,6 @@
-// const { Client, Intents, Collection} = require('discord.js');
 const { Client, Events, GatewayIntentBits, Collection} = require('discord.js');
 const { REST } = require('@discordjs/rest');
-const { Routes } = require('discord-api-types/v9');
+const { Routes} = require('discord-api-types/v9');
 const dotenv = require('dotenv');
 const fs = require('fs');
 
@@ -30,8 +29,7 @@ const rest = new REST({ version: '9' }).setToken(process.env.TOKEN);
     }
 })();
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
-// const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_VOICE_STATES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS, Intents.FLAGS.GUILD_MESSAGES] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] });
 client.commands = new Collection();
 
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
